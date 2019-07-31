@@ -1,7 +1,6 @@
 # mSelect plugin
 
-[![Downloads](https://pepy.tech/badge/video2tfrecord)](https://pepy.tech/project/video2tfrecord)
-
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 The Most Advanced Dropdown ever made that Support Big Datasets.
 
