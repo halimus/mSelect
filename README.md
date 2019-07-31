@@ -1,6 +1,6 @@
 # mSelect plugin
 
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
+[![Downloads](https://pepy.tech/badge/video2tfrecord)](https://pepy.tech/project/video2tfrecord)
 
 
 The Most Advanced Dropdown ever made that Support Big Datasets.
