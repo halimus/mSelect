@@ -1,0 +1,1 @@
+Run the scripts 01 then 02 in your phpMyAdmin

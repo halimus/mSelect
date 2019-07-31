@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 30, 2019, 11:04:00 PM
+    Author     : Halim
+*/
+html, body{
+    font-family: Roboto, Arial, sans-serif;
+    background: #fff; 
+    margin-bottom: 40px;
+}
+.welcome{
+    margin: auto;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+    color: #aaa;
+    margin-top:10px;
+}
+.welcome h1{
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.list-examples li{
+    padding: 6px;
+}
+.list-examples li a:hover{
+    text-decoration: none;
+    color: red;
+}
+
+#examples-content{
+    margin-left: 10px;
+    margin-top: 18px;
+}
+
+div.info{
+    margin-top: 15px;
+}
+
+#footer{
+    text-align: center;
+    color: silver;
+}
+
+#footer a{
+    color: silver;
+}
+
+.notice{
+    color: red;
+    font-size:0.8em
+}
+
+div.info .alert-info{
+    background: #e8f4f9;
+}
+
+/*--------------------------------
+code highlight
+----------------------------------*/
+
+pre{
+    padding: 5px;
+    background: #F8F8F8;
+}
+
+pre > code { 
+   padding: 20px;
+} 
+
+.title-code{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/*---------------------------------------------
+ responsive 
+----------------------------------------------*/
+
+@media (max-width: 768px) {
+    .code-content{
+        margin-top: 30px;
+    }
+}
