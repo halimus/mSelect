@@ -1,4 +1,16 @@
-# mSelect
+# mSelect jQuery Plugin
 
-mSelect is powerful multi select using <a href="http://davidstutz.github.io/bootstrap-multiselect/" target="_blank">Bootstrap multiselect</a> combined to <a href="https://datatables.net/" target="_blank">Datatables</a>.<br>
-Very useful for the large dataset.
+The Most Advanced Dropdown ever made that Support Big Datasets.
+
+
+
+## Docs: 
+https://mselect.info/docs
+
+## Demos: 
+https://mselect.info/demos
+
+## Licence: 
+
+Copyright (c) 2019 Halim Lardjane
+This plugin is open-source licensed under [My license](https://opensource.org/licenses/MIT).
