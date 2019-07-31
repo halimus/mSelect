@@ -2,8 +2,6 @@
 
 
 [![Website mselect.info](https://img.shields.io/website-up-down-green-red/http/lbesson.bitbucket.org.svg)](https://mselect.info/)
-
-
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
 The Most Advanced Dropdown ever made that Support Big Datasets.
