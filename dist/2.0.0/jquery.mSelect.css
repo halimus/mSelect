@@ -1,0 +1,221 @@
+/* 
+    mSelect 2.0.0 for Bootstrap v3.3.7 - https://github.com/halimus/mSelect
+    Created on : Apr 13, 2019, 3:41:05 PM
+    Author     : Halim Lardjane
+*/
+
+/*--------------------------------------------
+
+---------------------------------------------*/
+
+.mSelect ~ div.btn-group ul.multiselect-container {
+    border: 0px solid transparent;
+    box-shadow: none;
+}
+
+/*--------------------------------------------
+
+---------------------------------------------*/
+
+div.mSelect-content{
+    border: 1px solid #adadad;
+    overflow:auto; 
+    padding:6px 6px 0px 6px;
+    border-radius:3px;
+    margin-top: 4px;
+    display: none;
+    z-index: 9999;
+    position: absolute;
+    background: #fff;
+}
+
+/*--------------------------------------------
+
+---------------------------------------------*/
+
+.mSelect-content .table{
+    border: 1px solid #c9c9c9;
+    clear: both; 
+    font-size: 0.95em;
+    color: #333 !important;
+}
+
+.mSelect-content .table a:hover{
+    text-decoration: none;
+}
+
+.mSelect-content .table tbody tr:hover{
+    background: #ECF5FF;
+}
+
+.mSelect-content .table thead tr th{
+    background: #efefef;
+    color: #333;
+    border-bottom: 1px;
+    border-bottom: 1px dotted #eaeaea;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.mSelect-content div.dataTables_info {
+    color: #333;
+    font-size: 0.85em;
+}
+
+.mSelect-content .dataTables_empty{
+    text-align: center;
+    font-weight: normal;
+}
+
+/*--------------------------------------------
+ dataTables_processing
+---------------------------------------------*/
+
+.mSelect-content .dataTables_processing{
+    color: #337AB7;
+    background:  transparent;
+    border: 1px solid transparent;
+}
+
+.mSelect-content .dataTables_processing.panel {
+    background-color: transparent;
+    border: 0px solid transparent;
+    border-radius: 0px;
+    box-shadow: none;
+    margin-bottom: 0px;
+}   
+
+.mSelect-content .dataTables_processing .loader{
+    position: absolute;
+    left:36%;
+    top: 35%;
+    text-align: center;
+    z-index: 100;
+    font-weight: normal;
+    font-size: 2.4em;
+    background: transparent;
+    color: #3380C4;
+    color: #808080;
+}
+
+/*---------------------------------------------
+ datatable infos & paginate
+----------------------------------------------*/
+
+.mSelect-content div.dataTables_length {
+    float: left;
+    margin-right:0px !important;
+}
+
+.mSelect-content div.dataTables_length select {
+    width: 65px !important;
+    height: 28px;
+}
+
+.mSelect-content div.dataTables_filter {
+    float: right;
+    width: 140px;
+}
+
+.mSelect-content div.dataTables_filter input {
+    width: 130px !important ;
+    height: 28px;
+}
+
+.mSelect-content div.dataTables_info {
+    float: left;
+    margin-top: -2px;
+}
+
+.mSelect-content .dataTables_paginate{
+    float: right;
+    font-size: 0.9em;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: -1px !important;
+}
+
+.mSelect-content .pagination > li > a{
+    padding: 4px 10px;
+}
+
+.mSelect-content #datatable_length select, .mSelect-content #datatable_filter input{
+    border-radius: 0px;
+}
+
+.mSelect-content .dataTables_info span.select-info{
+    color: red !important;
+    display: none;
+}
+
+/*---------------------------------------------
+ datatable buttons & input
+----------------------------------------------*/
+
+.mSelect-content div.dt-buttons .btn{
+    height: 28.45px; 
+    margin-left: 5px !important;
+    width: 35px;
+    color: #666;
+}
+
+.mSelect-content div.dt-buttons .btn i{
+    position: absolute;
+    margin-top: -6px;
+    margin-left: -6px;
+    font-size: 0.95em;
+}
+
+/* IE9, IE10, IE11 */
+@media screen and (min-width:0\0) {
+   .mSelect-content div.dt-buttons .btn i{
+       margin-top: 0px;
+   }    
+}
+
+.mSelect-content div.dt-buttons .btn:hover, .mSelect-content div.dt-buttons .btn:active{
+    color: #000;
+}
+
+.mSelect-content .dataTables_wrapper .paginate_button a{
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.mSelect-content .dataTables_wrapper input:focus, .mSelect-content .dataTables_wrapper select:focus, .mSelect-content .dataTables_wrapper .btn:focus{
+    outline: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+} 
+
+.mSelect-content .dt-buttons{
+    display: inline;
+}
+
+.mSelect-content .table thead tr th {
+    padding: 7px !important;
+    /*white-space: nowrap;*/ 
+}    
+.mSelect-content .table tr td {
+    padding: 7px !important; 
+}
+
+/*---------------------------------------------
+  
+----------------------------------------------*/
+
+.mSelect-content .table.dataTable tbody tr.selected .fa {
+    color: #fff !important;
+}
+.mSelect-content .table.dataTable tbody tr.selected .highlight {
+    color: #000 !important;
+}
+
+/*---------------------------------------------
+ responsive 
+----------------------------------------------*/
+
+@media (max-width: 768px) {
+    
+}
