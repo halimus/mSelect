@@ -1,5 +1,8 @@
 # mSelect plugin
 
+[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
+
+
 The Most Advanced Dropdown ever made that Support Big Datasets.
 
 
