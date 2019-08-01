@@ -1,5 +1,6 @@
 # mSelect plugin
 
+[![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://github.com/halimus/mSelect/releases)
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://mselect.info/docs)
 [![Website naereen.github.io](https://img.shields.io/website-up-down-green-red/https/naereen.github.io.svg)](https://mselect.info/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/halimus/mSelect/graphs/commit-activity)
