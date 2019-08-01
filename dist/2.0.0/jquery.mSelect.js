@@ -7,7 +7,7 @@
 (function($){
     "use strict";
     
-    var url_plugin = 'https://github.com/halimus/mSelect';
+    var url_plugin = 'https://mselect.info/docs/pages/quickstart.html';
     
     var lang = {
         en: {none_selected: "None selected", selected: "selected", show_selected: "Show selected", show_all: "Show all", refresh: "Refresh"},
