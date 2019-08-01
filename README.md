@@ -12,7 +12,7 @@ The Most Advanced Dropdown ever made that Support Big Datasets.
 
 
 ![alt tag](https://github.com/halimus/mSelect/blob/master/demos/public/images/large-logo.png)
-
+<img align="center" src="https://github.com/halimus/mSelect/blob/master/demos/public/images/large-logo.png">
 
 ## Docs: 
 https://mselect.info/docs
