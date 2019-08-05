@@ -29,14 +29,14 @@
                     <p>This example show you how to:</p>
                     <ul>
                        <li>Load the plugin</li>
-                       <li>Return the Selected ids and the Selected labels when close the mSelect</li>
+                       <li>Return the Selected ids when onChange the mSelect</li>
                     </ul>
                 </div>
             </div> 
         </div>
         
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <label>Country</label><br>
                 <select id="country_id" class="mSelect" multiple="multiple"></select>
             </div>
@@ -58,15 +58,10 @@
         $(function () {
             $('#country_id').mSelect({
                 url: 'ajax/example1.php',
-                returnSelectedLabels: {     // Activate the return of the selected labels
-                    enable: true
-                },
-                onDropdownHide: function(selectedIds, selectedLabels) {    // callback functions
-                    console.log('the mSelect is closed');
-                    console.log('------- The selectedIds ---------');
+                onChange: function(selectedIds) {    // callback functions
+                    // do something here...
+                    console.log('onChange mSelect');
                     console.log(selectedIds);
-                    console.log('------- The selectedLabels ------');
-                    console.log(selectedLabels); 
                 }
             });
         }); 

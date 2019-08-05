@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.15/css/bootstrap-multiselect.css" rel="stylesheet">
     <!-- Datatables -->
     <link href="https://cdn.datatables.net/v/bs/dt-1.10.18/af-2.3.2/b-1.5.4/b-colvis-1.5.4/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-1.5.0/sl-1.2.6/datatables.min.css" rel="stylesheet">
@@ -29,7 +30,7 @@
                     <p>This example show you how to:</p>
                     <ul>
                        <li>Load the plugin</li>
-                       <li>Do something when you open the mSelect: onDropdownShow</li>
+                       <li>Prepend some data to the mSelect</li>
                     </ul>
                 </div>
             </div> 
@@ -50,6 +51,7 @@
     <!-- Datatables -->
     <script src="https://cdn.datatables.net/v/bs/dt-1.10.18/af-2.3.2/b-1.5.4/b-colvis-1.5.4/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-1.5.0/sl-1.2.6/datatables.min.js"></script>
     <script src="https://cdn.datatables.net/plug-ins/1.10.12/features/searchHighlight/dataTables.searchHighlight.min.js"></script>
+    <script src="https://bartaz.github.io/sandbox.js/jquery.highlight.js"></script>
     <script src="public/plugins/datatables/checkboxes/1.2.11/dataTables.checkboxes.min.js"></script>
     <!-- mSelect -->
     <script src="../dist/2.0.0/jquery.mSelect.min.js"></script>
@@ -57,18 +59,10 @@
     <script>
         $(function () {
             $('#country_id').mSelect({
-                url: 'ajax/example1.php',
-                onDropdownShow: function() {    // callback functions
-                    // do something here...
-                    console.log("mSelect opened");  
-                    alert("mSelect opened");
-                }
+                url: 'ajax/example18.php',
+                prependData: {'null': 'Undefined'}
             });
         }); 
-    </script> 
+    </script>
 </body>
 </html>  
-
-
-
-

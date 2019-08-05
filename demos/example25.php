@@ -29,7 +29,7 @@
                     <p>This example show you how to:</p>
                     <ul>
                        <li>Load the plugin</li>
-                       <li>Return the Selected ids / labels / unique labels when close & onChange the mSelect</li>
+                       <li>Return the Selected ids and the Selected labels and the Unique labels when close the mSelect</li>
                     </ul>
                 </div>
             </div> 
@@ -41,7 +41,7 @@
                 <select id="state_id" class="mSelect" multiple="multiple"></select>
             </div>
         </div>
-
+        
     </div>
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -57,7 +57,7 @@
     <script>
         $(function () {
             $('#state_id').mSelect({
-                url: 'ajax/example24.php',
+                url: 'ajax/example25.php',
                 columns: ['State Name', 'Country Name', 'Phone Code'],
                 minWidth: 550,
                 returnSelectedLabels: {     // Activate to return the selected labels
@@ -65,20 +65,8 @@
                     indexLabel: 2,          // return the "Country Name" Labels
                     uniqueLabel: true       // return the unique labels as well
                 },
-                onDropdownShow: function () {
-                    console.log('======= the mSelect is opened =======');
-                },
-                onDropdownHide: function(selectedIds, selectedLabels, uniqueSelectedLabels) { 
-                    console.log('======= the mSelect is closed =======');
-                    console.log('------- The selectedIds -------------');
-                    console.log(selectedIds);
-                    console.log('------- The selectedLabels ----------');
-                    console.log(selectedLabels); 
-                    console.log('------- The uniqueSelectedLabels ----');
-                    console.log(uniqueSelectedLabels); 
-                },
-                onChange: function(selectedIds, selectedLabels, uniqueSelectedLabels) { 
-                    console.log('======= onChange mSelect =======');
+                onDropdownHide: function(selectedIds, selectedLabels, uniqueSelectedLabels) {    // callback functions
+                    console.log('the mSelect is closed');
                     console.log('------- The selectedIds -------------');
                     console.log(selectedIds);
                     console.log('------- The selectedLabels ----------');
@@ -91,5 +79,8 @@
     </script> 
 </body>
 </html>  
+
+
+
 
 

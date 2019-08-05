@@ -29,7 +29,7 @@
                     <p>This example show you how to:</p>
                     <ul>
                        <li>Load the plugin</li>
-                       <li>Return the Selected ids / labels for multiple mSelect's on the same page</li>
+                       <li>Return the Selected ids / labels / unique labels when close & onChange the mSelect</li>
                     </ul>
                 </div>
             </div> 
@@ -37,15 +37,11 @@
         
         <div class="row">
             <div class="col-md-4">
-                <label>Country</label><br>
-                <select id="country_id" class="mSelect" multiple="multiple"></select>
-            </div>
-            <div class="col-md-4">
                 <label>State</label><br>
                 <select id="state_id" class="mSelect" multiple="multiple"></select>
             </div>
         </div>
-        
+
     </div>
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -60,65 +56,40 @@
     <!-- Custom JS -->
     <script>
         $(function () {
-            /**
-             * Load the country mSelect
-             */
-            $('#country_id').mSelect({
-                url: 'ajax/example1.php',
-                returnSelectedLabels: {     // Activate to return the selected labels
-                    enable: true
-                },
-                onDropdownShow: function () {
-                    console.log('======= mSelect country is opened =======');
-                },
-                onDropdownHide: function(selectedIds, selectedLabels) { 
-                    console.log('======= mSelect country is closed =======');
-                    console.log('------- selectedIds country -------------');
-                    console.log(selectedIds);
-                    console.log('------- selectedLabels country ----------');
-                    console.log(selectedLabels);  
-                },
-                onChange: function(selectedIds, selectedLabels) { 
-                    console.log('======= onChange mSelect country =======');
-                    console.log('------- selectedIds country -------------');
-                    console.log(selectedIds);
-                    console.log('------- selectedLabels country----------');
-                    console.log(selectedLabels); 
-                }
-            });
-            
-            /**
-             * Load the state mSelect
-             */
             $('#state_id').mSelect({
-                url: 'ajax/example14.php',
-                data: {'country_id': 231},
-                returnSelectedLabels: {    // Activate to return the selected labels
-                    enable: true
+                url: 'ajax/example25.php',
+                columns: ['State Name', 'Country Name', 'Phone Code'],
+                minWidth: 550,
+                returnSelectedLabels: {     // Activate to return the selected labels
+                    enable: true,
+                    indexLabel: 2,          // return the "Country Name" Labels
+                    uniqueLabel: true       // return the unique labels as well
                 },
                 onDropdownShow: function () {
-                    console.log('======= mSelect state is opened =======');
+                    console.log('======= the mSelect is opened =======');
                 },
-                onDropdownHide: function(selectedIds, selectedLabels) { 
-                    console.log('======= mSelect state is closed =======');
-                    console.log('------- selectedIds state -------------');
+                onDropdownHide: function(selectedIds, selectedLabels, uniqueSelectedLabels) { 
+                    console.log('======= the mSelect is closed =======');
+                    console.log('------- The selectedIds -------------');
                     console.log(selectedIds);
-                    console.log('------- selectedLabels state ----------');
-                    console.log(selectedLabels);  
-                },
-                onChange: function(selectedIds, selectedLabels) { 
-                    console.log('======= onChange mSelect state =======');
-                    console.log('------- selectedIds state -------------');
-                    console.log(selectedIds);
-                    console.log('------- selectedLabels state ----------');
+                    console.log('------- The selectedLabels ----------');
                     console.log(selectedLabels); 
+                    console.log('------- The uniqueSelectedLabels ----');
+                    console.log(uniqueSelectedLabels); 
+                },
+                onChange: function(selectedIds, selectedLabels, uniqueSelectedLabels) { 
+                    console.log('======= onChange mSelect =======');
+                    console.log('------- The selectedIds -------------');
+                    console.log(selectedIds);
+                    console.log('------- The selectedLabels ----------');
+                    console.log(selectedLabels); 
+                    console.log('------- The uniqueSelectedLabels ----');
+                    console.log(uniqueSelectedLabels); 
                 }
             });
         }); 
     </script> 
 </body>
 </html>  
-
-
 
 

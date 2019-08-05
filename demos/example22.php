@@ -29,7 +29,7 @@
                     <p>This example show you how to:</p>
                     <ul>
                        <li>Load the plugin</li>
-                       <li>Return the Selected ids when onChange the mSelect</li>
+                       <li>Return the Selected ids when close the mSelect</li>
                     </ul>
                 </div>
             </div> 
@@ -58,9 +58,9 @@
         $(function () {
             $('#country_id').mSelect({
                 url: 'ajax/example1.php',
-                onChange: function(selectedIds) {    // callback functions
+                onDropdownHide: function(selectedIds) {    // callback functions
                     // do something here...
-                    console.log('onChange mSelect');
+                    console.log('the mSelect is closed');
                     console.log(selectedIds);
                 }
             });

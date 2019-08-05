@@ -17,11 +17,6 @@
     <!-- mSelect -->
     <link href="../dist/2.0.0/jquery.mSelect.min.css" rel="stylesheet">
     <link href="public/css/style.css" rel="stylesheet">
-    <style>
-        button.action_country{
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -34,7 +29,7 @@
                     <p>This example show you how to:</p>
                     <ul>
                        <li>Load the plugin</li>
-                       <li>mSelect methods in action</li>
+                       <li>Return the Selected ids / labels for multiple mSelect's on the same page</li>
                     </ul>
                 </div>
             </div> 
@@ -42,33 +37,14 @@
         
         <div class="row">
             <div class="col-md-4">
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <label>Country</label><br>
-                        <select id="country_id" class="mSelect" multiple="multiple"></select>
-                    </div>
-                </div>
-                
-                <div class="row form-group" style="margin-top:40px">
-                    <div class="col-md-12">
-                        <label>Methods for Country:</label><br>
-                        <button type="button" class="action_country" data-action="get_id">Get Selected Ids</button>&nbsp;
-                        <button type="button" class="action_country" data-action="labels">Get Selected Labels</button>&nbsp;
-                        <button type="button" class="action_country" data-action="unique-labels" style="margin-top:5px">Get Unique Selected Labels</button>&nbsp;
-                        <button type="button" class="action_country" data-action="set_color">Set Color</button>&nbsp;
-                        <button type="button" class="action_country" data-action="remove_color">Remove Color</button>&nbsp;
-                        <button type="button" class="action_country" data-action="enable">Enable</button>&nbsp;
-                        <button type="button" class="action_country" data-action="disable">Disable</button>&nbsp;
-                        <button type="button" class="action_country" data-action="show">Show</button>&nbsp;
-                        <button type="button" class="action_country" data-action="hide">Hide</button>&nbsp;
-                        <button type="button" class="action_country" data-action="set_id">Set Selected Ids</button>&nbsp;
-                        <button type="button" class="action_country" data-action="refresh">Refresh mSelect with new options</button>&nbsp;
-                        <button type="button" class="action_country" data-action="reset">Reset the mSelect</button>&nbsp;
-                    </div>
-                </div>
+                <label>Country</label><br>
+                <select id="country_id" class="mSelect" multiple="multiple"></select>
             </div>
-            
-        </div>       
+            <div class="col-md-4">
+                <label>State</label><br>
+                <select id="state_id" class="mSelect" multiple="multiple"></select>
+            </div>
+        </div>
         
     </div>
     <!-- JS -->
@@ -85,88 +61,57 @@
     <script>
         $(function () {
             /**
-             * load country mSelect
+             * Load the country mSelect
              */
-            var country_id = $('#country_id').mSelect({
+            $('#country_id').mSelect({
                 url: 'ajax/example1.php',
-                buttonWidth: '100%', 
                 returnSelectedLabels: {     // Activate to return the selected labels
-                    enable: true,
-                    uniqueLabel: true 
+                    enable: true
                 },
-                onDropdownShow: function() {   
-                    // do something here...
+                onDropdownShow: function () {
+                    console.log('======= mSelect country is opened =======');
                 },
-                onDropdownHide: function(selectedIds, selectedLabels) {    
-                    // do something here...
+                onDropdownHide: function(selectedIds, selectedLabels) { 
+                    console.log('======= mSelect country is closed =======');
+                    console.log('------- selectedIds country -------------');
+                    console.log(selectedIds);
+                    console.log('------- selectedLabels country ----------');
+                    console.log(selectedLabels);  
                 },
-                onChange: function(selectedIds, selectedLabels) {
-                    // do something here...
+                onChange: function(selectedIds, selectedLabels) { 
+                    console.log('======= onChange mSelect country =======');
+                    console.log('------- selectedIds country -------------');
+                    console.log(selectedIds);
+                    console.log('------- selectedLabels country----------');
+                    console.log(selectedLabels); 
                 }
             });
             
             /**
-             * country methods
+             * Load the state mSelect
              */
-            $(document).on("click", '.action_country', function(event) {
-                var action = $(this).attr('data-action');
-                if(action === 'get_id'){
-                    console.log("----Country Selected Ids----");
-                    var ids = country_id.getSelectedIds();
-                    console.log(ids);
-                }
-                else if(action === 'labels'){
-                    console.log("----Country Selected Labels----");
-                    var labels = country_id.getSelectedLabels();
-                    console.log(labels);
-                }
-                else if(action === 'unique-labels'){
-                    console.log("----Country Unique Selected Labels----");
-                    var labels = country_id.getUniqueSelectedLabels();
-                    console.log(labels);    
-                }
-                else if(action === 'set_color'){
-                    console.log("----set Color Country----");
-                    country_id.setCSS('background:#ffeb54;border:1px solid #666;');
-                }
-                else if(action === 'remove_color'){
-                    console.log("----set Color Country----");
-                    country_id.setCSS(null);
-                }
-                else if(action === 'enable'){
-                    console.log("----enable Country----");
-                    country_id.mSelect('enable');  // enable the mSelect
-                }
-                else if(action === 'disable'){
-                    console.log("----disable Country----");
-                    country_id.mSelect('disable');  // disable the mSelect
-                }
-                else if(action === 'show'){
-                    console.log("----show Country----");
-                    country_id.mSelect('show');  // show the mSelect
-                }
-                else if(action === 'hide'){
-                    console.log("----hide Country----");
-                    country_id.mSelect('hide'); // hide the mSelect
-                }
-                else if(action === 'set_id'){
-                    console.log("----set Country SelectedIds----");
-                    console.log("auto select the ids 3,7,8");
-                    country_id.setSelectedIds(["3", "7", "8"]); // auto select the ids 3,7,8
-                    
-                }
-                else if(action === 'refresh'){
-                    console.log("----refresh Country with new options----");
-                    country_id.mSelect('refresh', {
-                        disable: false,
-                        selectedIds: ["8", "10"],
-                        cssNotEmpty: 'background: yellow',
-                        btnRefresh: true
-                    });
-                }
-                else if(action === 'reset'){
-                    console.log("----reset Country----");
-                    country_id.mSelect('reset');  // reset the mSelect
+            $('#state_id').mSelect({
+                url: 'ajax/example14.php',
+                data: {'country_id': 231},
+                returnSelectedLabels: {    // Activate to return the selected labels
+                    enable: true
+                },
+                onDropdownShow: function () {
+                    console.log('======= mSelect state is opened =======');
+                },
+                onDropdownHide: function(selectedIds, selectedLabels) { 
+                    console.log('======= mSelect state is closed =======');
+                    console.log('------- selectedIds state -------------');
+                    console.log(selectedIds);
+                    console.log('------- selectedLabels state ----------');
+                    console.log(selectedLabels);  
+                },
+                onChange: function(selectedIds, selectedLabels) { 
+                    console.log('======= onChange mSelect state =======');
+                    console.log('------- selectedIds state -------------');
+                    console.log(selectedIds);
+                    console.log('------- selectedLabels state ----------');
+                    console.log(selectedLabels); 
                 }
             });
         }); 

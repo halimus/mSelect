@@ -29,7 +29,7 @@
                     <p>This example show you how to:</p>
                     <ul>
                        <li>Load the plugin</li>
-                       <li>Return the Selected ids and the Selected labels and the Unique labels when close the mSelect</li>
+                       <li>Return the Selected ids and the Selected labels when close the mSelect</li>
                     </ul>
                 </div>
             </div> 
@@ -37,8 +37,8 @@
         
         <div class="row">
             <div class="col-md-4">
-                <label>State</label><br>
-                <select id="state_id" class="mSelect" multiple="multiple"></select>
+                <label>Country</label><br>
+                <select id="country_id" class="mSelect" multiple="multiple"></select>
             </div>
         </div>
         
@@ -56,23 +56,17 @@
     <!-- Custom JS -->
     <script>
         $(function () {
-            $('#state_id').mSelect({
-                url: 'ajax/example24.php',
-                columns: ['State Name', 'Country Name', 'Phone Code'],
-                minWidth: 550,
-                returnSelectedLabels: {     // Activate to return the selected labels
-                    enable: true,
-                    indexLabel: 2,          // return the "Country Name" Labels
-                    uniqueLabel: true       // return the unique labels as well
+            $('#country_id').mSelect({
+                url: 'ajax/example1.php',
+                returnSelectedLabels: {     // Activate the return of the selected labels
+                    enable: true
                 },
-                onDropdownHide: function(selectedIds, selectedLabels, uniqueSelectedLabels) {    // callback functions
+                onDropdownHide: function(selectedIds, selectedLabels) {    // callback functions
                     console.log('the mSelect is closed');
-                    console.log('------- The selectedIds -------------');
+                    console.log('------- The selectedIds ---------');
                     console.log(selectedIds);
-                    console.log('------- The selectedLabels ----------');
+                    console.log('------- The selectedLabels ------');
                     console.log(selectedLabels); 
-                    console.log('------- The uniqueSelectedLabels ----');
-                    console.log(uniqueSelectedLabels); 
                 }
             });
         }); 

@@ -29,7 +29,7 @@
                     <p>This example show you how to:</p>
                     <ul>
                        <li>Load the plugin</li>
-                       <li>Do something when you close the mSelect: onDropdownHide</li>
+                       <li>Do something when you open the mSelect: onDropdownShow</li>
                     </ul>
                 </div>
             </div> 
@@ -58,10 +58,10 @@
         $(function () {
             $('#country_id').mSelect({
                 url: 'ajax/example1.php',
-                onDropdownHide: function() {    // callback functions
+                onDropdownShow: function() {    // callback functions
                     // do something here...
-                    console.log("mSelect closed");  
-                    alert("mSelect closed");
+                    console.log("mSelect opened");  
+                    alert("mSelect opened");
                 }
             });
         }); 

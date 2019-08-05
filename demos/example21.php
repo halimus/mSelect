@@ -22,14 +22,14 @@
     <div class="container">
         <div class="row form-group">
             <div class="col-md-12">
-                <h2><a href="index.php" title="Back"><i class="fa fa-arrow-circle-left"></i></a> Example 21: <span class="notice">(Open the Dev Console and check the Log)</span></h2>
+                <h2><a href="index.php" title="Back"><i class="fa fa-arrow-circle-left"></i></a> Example 21:</h2>
             </div> 
             <div class="col-md-12 info">
                 <div class="alert alert-info">
                     <p>This example show you how to:</p>
                     <ul>
                        <li>Load the plugin</li>
-                       <li>Return the Selected ids when close the mSelect</li>
+                       <li>Do something when you onChange the mSelect: onChange</li>
                     </ul>
                 </div>
             </div> 
@@ -58,10 +58,13 @@
         $(function () {
             $('#country_id').mSelect({
                 url: 'ajax/example1.php',
-                onDropdownHide: function(selectedIds) {    // callback functions
-                    // do something here...
-                    console.log('the mSelect is closed');
-                    console.log(selectedIds);
+                onDropdownShow: function(uid) { 
+                    console.log('uid='+uid);
+                },
+                onChange: function(selectedIds, selectedLabels, uniqueSelectedLabels, uid) {
+                    console.log("onChange mSelect");  
+                    alert("onChange mSelect");   
+                    console.log('uid='+uid);
                 }
             });
         }); 
