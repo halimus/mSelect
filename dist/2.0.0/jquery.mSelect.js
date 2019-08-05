@@ -39,6 +39,7 @@
             url: null,                      // The ajax url
             data: {},                       // The data to pass via ajax
             ajax_var_name: 'ids',           // The name of the variable that we pass via ajax url for the selected rows
+            prependData: null,              // Prepend some data to the returned datatable rows
             selectedIds: [],                // The selected ids to select / return
             returnSelectedLabels:{          // You may need to return the selected labels as well
                 enable: false,
@@ -110,6 +111,10 @@
         ----------------------------------------------------------------------*/ 
         
         plugin.initialize = function(){
+            
+            if(settings.prependData !== null && settings.prependData !== ''  && typeof settings.prependData === 'object') {
+                settings.data['prependData'] = settings.prependData;
+            }
             
             if(settings.selectType == 'single'){ // remove all element from selectedIds except the first one
                 if(settings.selectedIds.length > 1){
