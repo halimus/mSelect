@@ -1,6 +1,6 @@
 /* 
- * mSelect 2.0.0 for Bootstrap v3 - https://github.com/halimus/mSelect
- * Created on: Apr 13, 2019, 3:41:05 PM
+ * mSelect 2.0.1 for Bootstrap v3 - https://github.com/halimus/mSelect
+ * Updated on: Aug 9, 2019, 3:41:05 PM
  * Author: Halim Lardjane
  * 
  */
