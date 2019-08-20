@@ -51,6 +51,7 @@
             loadWhenOpen: false,            // If true: the mSelect will be populated only when we open it
             disableIfEmpty: false,          // Disable the mSelect if no data
             disable: false,                 // Disable the mSelect
+            reset: false,                   // Reset the mSelect
             minWidth: 350,                  // The min Width for mSelect dropdown container
             buttonWidth: null,              // The buttonWidth for the multislect (possible values: null, 100%)
             cssNotEmpty: null,              // Apply a style for the mSelect Button when there is selected data
@@ -376,7 +377,7 @@
             if(settings.buttonWidth != null){
                 style+= 'width:'+settings.buttonWidth;
             }
-            if(style !=''){
+            if(style != ''){
                 $('#btn_'+settings.plugin_id).attr('style', style);
             }
             return true;
@@ -390,8 +391,12 @@
             load_datatable();
             datatableLoaded = true;
         }
+        
+        if(settings.reset === true){ 
+           reset_mSelect(); 
+        }
 
-        function load_datatable(){
+        function load_datatable() {
             datatable = $('#'+settings.table_id).DataTable({
                 "pageLength": settings.lengthMenu[0],
                 "lengthMenu": settings.lengthMenu,
@@ -494,7 +499,7 @@
                 });
             }
         }
-        
+
         /**---------------------------------------------------------------------
           Private methods
         ----------------------------------------------------------------------*/ 
