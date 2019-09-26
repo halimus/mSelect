@@ -65,6 +65,11 @@
                 color_icon1: '#666',        // The color for show selected button
                 color_icon2: '#666'         // The color for show selected button
             },
+            applyStyleToDom: {              // apply a css style to an item when the mSelect is opened and remove the style when the mselect is closed
+                item: null,            
+                style: null,
+                currentStyle: null
+            },
             lengthMenu: [10, 20, 50],       // Datatable lenght page
             order: [[1, 'asc']],            // Datatable order column
             lang: 'en',                     // Language of the plugin: en, fr, es, pt, ru, zh, ja   
@@ -206,6 +211,7 @@
             if(expanded === false){
                 mSelect.hide();
                 getUniqueLabels();
+                apply_style_to_dom('close');
                 settings.onDropdownHide.call(this, settings.selectedIds, settings.fullSelectedLabels, settings.uniqueSelectedLabels, settings.plugin_id);
             }
             else{
@@ -214,6 +220,7 @@
                     datatableLoaded = true;
                 }
                 mSelect.show();
+                apply_style_to_dom('open');
                 settings.onDropdownShow.call(this, settings.plugin_id);
             }
         });
@@ -240,6 +247,7 @@
                 if(settings.plugin_id == id){
                     $(".mSelect-content").not(":hidden").hide();
                     getUniqueLabels();
+                    apply_style_to_dom('close');
                     settings.onDropdownHide.call(this, settings.selectedIds, settings.fullSelectedLabels, settings.uniqueSelectedLabels, settings.plugin_id);
                 }
             }
@@ -580,6 +588,32 @@
             }
             var mSelect_content = $('#mSelect-content_'+settings.plugin_id);
             update_mselect_button(mSelect_content);
+        }
+        
+        /**
+         * 
+         */
+        function apply_style_to_dom(action) {
+            if(settings.applyStyleToDom.item != null && settings.applyStyleToDom.style != null) {
+                if(action == 'open') {
+                    var currentStyle = $(settings.applyStyleToDom.item).attr('style');
+                    if(currentStyle != undefined && currentStyle != null) {
+                        settings.applyStyleToDom.currentStyle = currentStyle;
+                        $(settings.applyStyleToDom.item).attr('style', settings.applyStyleToDom.style+';'+currentStyle);
+                    }
+                    else {
+                        $(settings.applyStyleToDom.item).attr('style', settings.applyStyleToDom.style);
+                    }
+                }
+                else {
+                    if(currentStyle != undefined || currentStyle != null) {
+                        $(settings.applyStyleToDom.item).attr('style', settings.applyStyleToDom.currentStyle);
+                    }
+                    else {
+                        $(settings.applyStyleToDom.item).removeAttr('style');
+                    }
+                }
+            }
         }
         
         /**
