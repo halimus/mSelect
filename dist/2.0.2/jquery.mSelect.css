@@ -1,6 +1,6 @@
 /* 
-    mSelect 2.0.1 for Bootstrap v3.3.7 - https://github.com/halimus/mSelect
-    Created on: Apr 13, 2019, 3:41:05 PM
+    mSelect 2.0.2 for Bootstrap v3.3.7 - https://github.com/halimus/mSelect
+    Updated on: Sep 27, 2019
     Author: Halim Lardjane
 */
 
@@ -18,15 +18,15 @@
 ---------------------------------------------*/
 
 div.mSelect-content{
+    background: #fff;
     border: 1px solid #adadad;
-    overflow:auto; 
     padding:6px 6px 0px 6px;
     border-radius:3px;
     margin-top: 4px;
     display: none;
     z-index: 9999;
     position: absolute;
-    background: #fff;
+    overflow:auto; 
 }
 
 /*--------------------------------------------
