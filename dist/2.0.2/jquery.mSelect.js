@@ -595,8 +595,8 @@
          */
         function apply_style_to_dom(action) {
             if(settings.applyStyleToDom.item != null && settings.applyStyleToDom.style != null) {
+                var currentStyle = $(settings.applyStyleToDom.item).attr('style');
                 if(action == 'open') {
-                    var currentStyle = $(settings.applyStyleToDom.item).attr('style');
                     if(currentStyle != undefined && currentStyle != null) {
                         settings.applyStyleToDom.currentStyle = currentStyle;
                         $(settings.applyStyleToDom.item).attr('style', settings.applyStyleToDom.style+';'+currentStyle);
