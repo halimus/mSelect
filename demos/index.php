@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 welcome">
-                <a href="https://mselect.info"><img src="public/images/large-logo.png" title="mSelect Logo"></a>
+                <a href="https://mselect.info"><img src="public/images/logo.png" title="mSelect Logo"></a>
                 <h1>Welcome to mSelect Plugin Demos</h1>
                 <h2>The Most Advanced Dropdown ever made that Support Big Datasets</h2>
             </div>
@@ -51,6 +51,7 @@
                         <li><a href="example15.php">Example 15: Custom the lengthMenu and the column order for the mSelect</a></li>
                         <li><a href="example16.php">Example 16: Disable the mSelect if empty data</a></li>
                         <li><a href="example17.php">Example 17: Load mSelect using an other supported Language</a></li>
+                        <li><a href="example31.php">Example 31: Navigation buttons on the top</a></li>
                     </ol>
 
                     <h4 style="color: magenta">Events:</h4>
